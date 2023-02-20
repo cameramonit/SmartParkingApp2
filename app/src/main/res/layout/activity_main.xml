@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:background="@drawable/custom_edittext">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/logintext"
+                android:layout_width="match_parent"
+                android:layout_height="117dp"
+                android:text="Login"
+                android:fontFamily="@font/intsafont"
+                android:textAlignment="center"
+                android:textColor="@color/purple"
+                android:textSize="65sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/block"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawablePadding="8dp"
+                android:imeOptions="actionDone"
+                android:hint="Username"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"/>
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_local_phone_24"
+                android:fontFamily="@font/block"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:drawablePadding="8dp"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:hint="Phone No."
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/purple"
+                android:text="Submit"
+                android:textSize="18sp"
+                app:cornerRadius="20dp"/>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:id="@+id/statuscheck"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="35dp"
+                    android:text="check the status here!"
+                    android:textColor="@color/purple"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    style="?android:buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingRight="45dp"
+                    android:text="status"
+                    android:textAllCaps="false"
+                    android:textColor="@color/purple_700"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
