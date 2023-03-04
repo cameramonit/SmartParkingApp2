@@ -1,5 +1,6 @@
 package com.example.smartparkingsystem;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,7 +33,8 @@ public class MainActivity2 extends AppCompatActivity {
 
        inf = FirebaseDatabase.getInstance();
         myRef1 = inf.getReference("Users");
-        myRef1.child(value1).child("time").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        //Entry time pull
+        myRef1.child(value1).child("Entry Time").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
@@ -40,13 +42,32 @@ public class MainActivity2 extends AppCompatActivity {
                 }
                 else {
                     Log.d("firebase", String.valueOf(task.getResult().getValue()));
-                    TextView entry=findViewById(R.id.editTextPhone);
-                    String str="Entry time: ";
-                    String str2=str.concat(String.valueOf(task.getResult().getValue()));
-                    entry.setText(str2);
+                    TextView entry=findViewById(R.id.entry);
+
+                    entry.setText(String.valueOf(task.getResult().getValue()));
+
                 }
             }
         });
+        myRef1.child(value1).child("Exit Time").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
+                    TextView exit=findViewById(R.id.exit);
+                    exit.setText(String.valueOf(task.getResult().getValue()));
+
+                }
+            }
+        });
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView entry1=findViewById(R.id.entry);
+        Log.d("firebase",entry1.getText().toString());
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView exit1=findViewById(R.id.exit);
+        Log.d("firebase",exit1.getText().toString());
+
 
 
         //back button

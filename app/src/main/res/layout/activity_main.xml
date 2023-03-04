@@ -27,29 +27,29 @@
                 android:id="@+id/logintext"
                 android:layout_width="match_parent"
                 android:layout_height="117dp"
-                android:text="Login"
                 android:fontFamily="@font/intsafont"
+                android:text="Login"
                 android:textAlignment="center"
                 android:textColor="@color/purple"
                 android:textSize="65sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
-                android:fontFamily="@font/block"
-                android:textStyle="bold"
-                android:textSize="30sp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
+                android:fontFamily="@font/block"
+                android:hint="Licence plate"
                 android:imeOptions="actionDone"
-                android:hint="Username"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background"/>
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextPhone"
@@ -58,16 +58,16 @@
                 android:layout_marginTop="40dp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_local_phone_24"
-                android:fontFamily="@font/block"
-                android:textStyle="bold"
-                android:textSize="30sp"
                 android:drawablePadding="8dp"
+                android:fontFamily="@font/block"
+                android:hint="Phone No."
                 android:imeOptions="actionDone"
                 android:inputType="phone"
-                android:hint="Phone No."
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background"/>
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button"
@@ -77,10 +77,11 @@
                 android:backgroundTint="@color/purple"
                 android:text="Submit"
                 android:textSize="18sp"
-                app:cornerRadius="20dp"/>
+                app:cornerRadius="20dp" />
+
             <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent">
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/statuscheck"
@@ -102,9 +103,24 @@
                     android:text="status"
                     android:textAllCaps="false"
                     android:textColor="@color/purple_700"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
+
+            <!--<TextView
+                android:id="@+id/submit_result"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="140dp"
+                android:layout_weight="50"
+                android:paddingLeft="20dp"
+                android:text="yyy"
+                android:textColor="@color/purple_500"
+                android:textSize="16sp"
+                android:textStyle="bold" />-->
 
 
         </LinearLayout>
