@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -68,25 +69,32 @@ public class MainActivity2 extends AppCompatActivity {
                        String final_string = half_string.concat(suffix_time);
                        TextView time = findViewById(R.id.editTextPhone);
                        time.setText(final_string);
+                       int cost =0;
+                       if(i_approx_time>=0&&i_approx_time<60){
+                           cost=30;
+                       } else if (i_approx_time>=60&&i_approx_time<120) {
+                           cost=40;
+                       } else if (i_approx_time>=120&&i_approx_time<180) {
+                           cost=60;
+                       } else if (i_approx_time>=180&&i_approx_time<360) {
+                           cost=100;
+                       }
+                       else {
+                           cost=100;
+                           int loop_int=i_approx_time-360;
+                           loop_int=loop_int/60;
+                           for(int i=1;i<=loop_int;i++){
+                               cost=cost+50;
+                           }
+                       }
+                       TextView appxcost=findViewById(R.id.capproxcost);
+                      String prefix="Cost: ₹";
+                       appxcost.setText(prefix.concat(String.valueOf(cost)));
+
+
                    }
             }
         });
-        /*myRef1.child(value1).child("Exit Time").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
-                    TextView exit=findViewById(R.id.exit);
-                    exit.setText(String.valueOf(task.getResult().getValue()));
-
-                }
-            }
-        });*/
-        //@SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView exit1=findViewById(R.id.exit);
-        //Log.d("firebase",exit1.getText().toString());
 
          Log.d("END", "hi");
 
@@ -109,6 +117,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this,MainActivity3.class);
+                intent.putExtra("plate1", value1);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
