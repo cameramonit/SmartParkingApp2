@@ -19,36 +19,50 @@ public class MainActivity extends AppCompatActivity {
     Button submit, status;
     FirebaseDatabase inf;
     DatabaseReference myRef;
-    //TextView sub_con;
     @Override
+    /*
+    *Method that executes when the app opens
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Identification of input boxes
         L_plate = findViewById(R.id.editTextTextPersonName);
         mno = findViewById(R.id.editTextPhone);
-        //sub_con=findViewById(R.id.submit_result);
+
+        //Identification of buttons
         submit = findViewById(R.id.button);
         status = findViewById(R.id.logoutb);
+
+        //Firebase instance and referencing
         inf = FirebaseDatabase.getInstance();
         myRef = inf.getReference("Users");
 
+        /*
+         * Method that executes when "Submit" button is pressed
+         */
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Saveuserfbd sfbd = new Saveuserfbd(L_plate.getText().toString(), mno.getText().toString());
-               // myRef.child(L_plate.getText().toString()).setValue(sfbd);
-                myRef.child(L_plate.getText().toString()).child("Mobile number:").setValue(mno.getText().toString());
-                myRef.child(L_plate.getText().toString()).child("Plate:").setValue(L_plate.getText().toString());
-                //sub_con.setText("SUBMITTED!, click status for more");
+
+                //setting value into: "User"->L_plate(variable)->"Mobile number"->(value to be entered which is stored in 'mno')
+                myRef.child(L_plate.getText().toString()).child("Mobile number").setValue(mno.getText().toString());
+
+                //setting value into: "User"->L_plate(variable)->"Plate"->(value to be entered which is stored in 'L_plate')
+                myRef.child(L_plate.getText().toString()).child("Plate").setValue(L_plate.getText().toString());
+
                 submit.setText("Submitted");
                 submit.setBackgroundColor(getResources().getColor(R.color.green));
 
             }
-
         });
+        /*
+         * Method that executes when "Status" button is pressed
+         */
         status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Intent that sends the user to next activity(MainActivity2)
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("plate", L_plate.getText().toString());
                 startActivityForResult(intent,0);
@@ -56,7 +70,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     @Override
+    /*
+     * Method that checks value of result returned by "MainActivity2" after 'finish()' command is run
+     */
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==0){
