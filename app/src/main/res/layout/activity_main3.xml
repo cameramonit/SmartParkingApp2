@@ -37,6 +37,7 @@
                 android:text="Back"
                 android:textColor="@color/black"
                 android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="20sp"
                 app:cornerRadius="20dp" />
 
 
@@ -119,6 +120,7 @@
             android:text="LOG OUT"
             android:textColor="@color/black"
             android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="20sp"
             app:cornerRadius="20dp" />
 
         <TextView
