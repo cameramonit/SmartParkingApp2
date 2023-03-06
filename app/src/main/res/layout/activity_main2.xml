@@ -94,7 +94,7 @@
                 android:textColorHighlight="@color/cardview_dark_background"/>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/logoutb"
                 style="?android:buttonBarButtonStyle"
                 android:layout_width="260dp"
                 android:layout_height="52dp"

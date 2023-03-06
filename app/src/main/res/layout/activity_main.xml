@@ -31,7 +31,7 @@
                 android:text="Login"
                 android:textAlignment="center"
                 android:textColor="@color/purple"
-                android:textSize="65sp"
+                android:textSize="60sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -42,6 +42,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
+                android:textAllCaps="true"
                 android:fontFamily="@font/block"
                 android:hint="Licence plate"
                 android:imeOptions="actionDone"
@@ -85,21 +86,25 @@
 
                 <TextView
                     android:id="@+id/statuscheck"
-                    android:layout_width="179dp"
+                    android:layout_width="194dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_weight="50"
                     android:paddingLeft="35dp"
                     android:text="check the status here!"
                     android:textColor="@color/purple"
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/logoutb"
                     style="?android:buttonBarButtonStyle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:paddingRight="45dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:paddingRight="0dp"
                     android:text="status"
                     android:textAllCaps="false"
                     android:textColor="@color/purple_700"
@@ -108,20 +113,16 @@
 
             </LinearLayout>
 
-            <!--<TextView
-                android:id="@+id/submit_result"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="140dp"
-                android:layout_weight="50"
-                android:paddingLeft="20dp"
-                android:text="yyy"
-                android:textColor="@color/purple_500"
-                android:textSize="16sp"
-                android:textStyle="bold" />-->
-
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="100dp"
+                android:textStyle="italic"
+                android:textSize="17sp"
+                android:textColor="@color/purple_700"
+                android:text="" />
 
         </LinearLayout>
 

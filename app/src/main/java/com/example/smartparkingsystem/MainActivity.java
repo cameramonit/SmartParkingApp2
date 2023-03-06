@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         mno = findViewById(R.id.editTextPhone);
         //sub_con=findViewById(R.id.submit_result);
         submit = findViewById(R.id.button);
-        status = findViewById(R.id.button2);
+        status = findViewById(R.id.logoutb);
         inf = FirebaseDatabase.getInstance();
         myRef = inf.getReference("Users");
 
@@ -49,10 +51,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("plate", L_plate.getText().toString());
-                startActivity(intent);
+                startActivityForResult(intent,0);
             }
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==0){
+            if(resultCode==RESULT_OK){
+                TextView log=findViewById(R.id.textView);
+                log.setText("LOGGED OUT!");
+            }
+        }
 
+    }
 }

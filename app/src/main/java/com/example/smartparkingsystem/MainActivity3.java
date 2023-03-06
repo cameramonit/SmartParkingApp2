@@ -19,9 +19,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class MainActivity3 extends AppCompatActivity {
     FirebaseDatabase inf;
     DatabaseReference myRef1;
@@ -106,9 +103,20 @@ ImageView QR;
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity3.this,MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                Intent intent = new Intent(MainActivity3.this,MainActivity2.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                setResult(0);
+                finish();
+            }
+        });
+        //logout button
+        Button b2=findViewById(R.id.logoutb);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myRef1.child(value1).removeValue();
+                setResult(RESULT_OK);
+                finish();
             }
         });
     }
