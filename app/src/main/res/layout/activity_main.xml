@@ -31,14 +31,14 @@
                 android:text="Login"
                 android:textAlignment="center"
                 android:textColor="@color/purple"
-                android:textSize="60sp"
+                android:autoSizeTextType="uniform"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
@@ -49,14 +49,17 @@
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="30dp"
+                android:autoSizeMaxTextSize="100dp"
+                android:autoSizeStepGranularity="2dp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextPhone"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_local_phone_24"
                 android:drawablePadding="8dp"
@@ -67,17 +70,23 @@
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="30dp"
+                android:autoSizeMaxTextSize="100dp"
+                android:autoSizeStepGranularity="2dp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:backgroundTint="@color/purple"
                 android:text="Submit"
-                android:textSize="18sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="18sp"
+                android:autoSizeStepGranularity="1sp"
                 app:cornerRadius="20dp" />
 
             <LinearLayout
@@ -94,7 +103,10 @@
                     android:paddingLeft="35dp"
                     android:text="check the status here!"
                     android:textColor="@color/purple"
-                    android:textSize="16sp" />
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:autoSizeStepGranularity="1sp"/>
 
                 <Button
                     android:id="@+id/logoutb"
@@ -108,7 +120,10 @@
                     android:text="status"
                     android:textAllCaps="false"
                     android:textColor="@color/purple_700"
-                    android:textSize="16sp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="13sp"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:autoSizeStepGranularity="1sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -120,7 +135,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="100dp"
                 android:textStyle="italic"
-                android:textSize="17sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"
                 android:textColor="@color/purple_700"
                 android:text="" />
 

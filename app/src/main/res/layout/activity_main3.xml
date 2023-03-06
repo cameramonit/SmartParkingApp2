@@ -35,7 +35,7 @@
                 android:paddingRight="42dp"
                 android:text="Back"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:autoSizeTextType="uniform"
                 app:cornerRadius="20dp" />
 
 
@@ -47,9 +47,9 @@
                 android:layout_marginRight="16dp"
                 android:text="Payment"
                 android:fontFamily="@font/intsafont"
-                android:textAlignment="center"
+                android:gravity="center"
                 android:textColor="@color/purple"
-                android:textSize="60sp"
+                android:autoSizeTextType="uniform"
                 android:textStyle="bold"/>
 
             <TextView
@@ -58,7 +58,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/block"
-                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
                 android:background="@color/white"
                 android:drawablePadding="8dp"
                 android:text="Total Time stay:"
@@ -74,7 +74,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@color/white"
                 android:fontFamily="@font/block"
-                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
                 android:drawablePadding="8dp"
                 android:text="Approx cost:"
                 android:padding="8dp"
@@ -83,15 +83,15 @@
 
             <TextView
                 android:id="@+id/scanner"
-                android:layout_width="190dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="74dp"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="0dp"
                 android:background="@color/white"
                 android:text="SCAN HERE TO PAY!"
                 android:textColor="@color/purple_700"
-                android:textSize="17sp"
+                android:autoSizeTextType="uniform"
                 android:textStyle="bold" />
 
             <ImageView
@@ -117,7 +117,7 @@
             android:drawablePadding="10dp"
             android:text="LOG OUT"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:autoSizeTextType="uniform"
             app:cornerRadius="20dp" />
 
         <TextView

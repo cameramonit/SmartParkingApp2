@@ -35,7 +35,7 @@
                 android:paddingRight="42dp"
                 android:text="Back"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:autoSizeTextType="uniform"
                 app:cornerRadius="20dp"/>
 
             <TextView
@@ -46,7 +46,7 @@
                 android:fontFamily="@font/intsafont"
                 android:textAlignment="center"
                 android:textColor="@color/purple"
-                android:textSize="65sp"
+                android:autoSizeTextType="uniform"
                 android:textStyle="bold"/>
 
             <TextView
@@ -61,7 +61,7 @@
                 android:text="License Plate"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
                 />
 
 
@@ -77,7 +77,7 @@
                 android:text="Time Spent:"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:textSize="30sp" />
+                android:autoSizeTextType="uniform" />
 
             <TextView
                 android:id="@+id/capproxcost"
@@ -86,7 +86,7 @@
                 android:layout_marginTop="40dp"
                 android:background="@color/white"
                 android:fontFamily="@font/block"
-                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
                 android:drawablePadding="8dp"
                 android:text="Cost"
                 android:padding="8dp"
@@ -96,9 +96,9 @@
             <Button
                 android:id="@+id/logoutb"
                 style="?android:buttonBarButtonStyle"
-                android:layout_width="260dp"
+                android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginLeft="20dp"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_weight="0"
                 android:drawableRight="@drawable/baseline_arrow_circle_right_24"
@@ -107,7 +107,7 @@
                 android:text="Proceed to payment"
                 android:textAllCaps="false"
                 android:textColor="@color/purple_700"
-                android:textSize="16sp"
+                android:autoSizeTextType="uniform"
                 android:textStyle="bold" />
 
             <TextView
