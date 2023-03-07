@@ -27,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Identification of input boxes
-        L_plate = findViewById(R.id.editTextTextPersonName);
-        mno = findViewById(R.id.editTextPhone);
+        L_plate = findViewById(R.id.entered_plate);
+        mno = findViewById(R.id.Phoneno);
 
         //Identification of buttons
         submit = findViewById(R.id.button);
-        status = findViewById(R.id.logoutb);
+        status = findViewById(R.id.status);
 
         //Firebase instance and referencing
         inf = FirebaseDatabase.getInstance();

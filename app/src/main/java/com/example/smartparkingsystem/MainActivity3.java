@@ -54,39 +54,33 @@ ImageView QR;
                                 exit.setText(String.valueOf(task.getResult().getValue()));
                                 String start = convertHoursToMinutes(entry1.getText().toString());
                                 String end = convertHoursToMinutes(exit.getText().toString());
-                                Log.d("TIME", entry1.getText().toString());
-                                Log.d("TIME1",exit.getText().toString());
-                                Log.d("START", start);
-                                Log.d("END", end);
-                                int current = Integer.parseInt(end);
+                                int ends = Integer.parseInt(end);
                                 int starts = Integer.parseInt(start);
-                                int i_approx_time = current - starts;
-                                String s_approx_time = String.valueOf(i_approx_time);
-                                String prefix_time = "Total Time: ";
-                                String suffix_time = " minutes";
-                                String half_string = prefix_time.concat(s_approx_time);
-                                String final_string = half_string.concat(suffix_time);
-                                TextView time = findViewById(R.id.editTextTextPersonName);
+                                int i_total_time = ends - starts;
+                                int i_total_time_h= i_total_time/60;
+                                int i_total_time_m= i_total_time%60;
+                                String final_string=String.format("Total time: %2d h %2d m",i_total_time_h,i_total_time_m);
+                                TextView time = findViewById(R.id.enteredplate);
                                 time.setText(final_string);
                                 int cost =0;
-                                if(i_approx_time>=0&&i_approx_time<60){
+                                if(i_total_time>=0&&i_total_time<60){
                                     cost=30;
-                                } else if (i_approx_time>=60&&i_approx_time<120) {
+                                } else if (i_total_time>=60&&i_total_time<120) {
                                     cost=40;
-                                } else if (i_approx_time>=120&&i_approx_time<180) {
+                                } else if (i_total_time>=120&&i_total_time<180) {
                                     cost=60;
-                                } else if (i_approx_time>=180&&i_approx_time<360) {
+                                } else if (i_total_time>=180&&i_total_time<360) {
                                     cost=100;
                                 }
                                 else {
                                     cost=100;
-                                    int loop_int=i_approx_time-360;
+                                    int loop_int=i_total_time-360;
                                     loop_int=loop_int/60;
                                     for(int i=1;i<=loop_int;i++){
                                         cost=cost+50;
                                     }
                                 }
-                                TextView appxcost=findViewById(R.id.editTextPhone);
+                                TextView appxcost=findViewById(R.id.Phoneno);
                                 String prefix="Total Cost: ₹";
                                 appxcost.setText(prefix.concat(String.valueOf(cost)));
 

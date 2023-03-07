@@ -24,7 +24,7 @@
             android:padding="24dp">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/back1"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="0dp"
@@ -52,7 +52,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/plate_no"
                 android:layout_width="305dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -68,7 +68,7 @@
 
 
             <TextView
-                android:id="@+id/editTextPhone"
+                android:id="@+id/approx_time"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -96,7 +96,7 @@
                 android:textColorHighlight="@color/cardview_dark_background"/>
 
             <Button
-                android:id="@+id/logoutb"
+                android:id="@+id/payment"
                 style="?android:buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
@@ -113,7 +113,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/entry"
+                android:id="@+id/entry_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"/>

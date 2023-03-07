@@ -34,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         //licence plate fetching
         String value1 = super.getIntent().getExtras().getString("plate");
-        TextView plate=findViewById(R.id.textView2);
+        TextView plate=findViewById(R.id.plate_no);
         String lp="Plate: ";
         String b=lp.concat(value1);
         plate.setText(b);
@@ -48,25 +48,19 @@ public class MainActivity2 extends AppCompatActivity {
                    if (!task.isSuccessful()) {
                        Log.e("firebase", "Error getting data", task.getException());
                    } else {
-                       Log.d("firebase1", String.valueOf(task.getResult().getValue()));
-                       TextView entry = findViewById(R.id.entry);
+                       Log.d("firebase", String.valueOf(task.getResult().getValue()));
+                       TextView entry = findViewById(R.id.entry_temp);
                        entry.setText(String.valueOf(task.getResult().getValue()));
                        Date currentTime = Calendar.getInstance().getTime();
                        String start = convertHoursToMinutes(entry.getText().toString());
                        String end = convertHoursToMinutes(String.valueOf(currentTime).substring(11, 20));
-                       Log.d("TIME", entry.getText().toString());
-                       Log.d("TIME1", String.valueOf(currentTime).substring(11, 20));
-                       Log.d("START", start);
-                       Log.d("END", end);
-                       int current = Integer.parseInt(end);
-                       int starts = Integer.parseInt(start);
-                       int i_approx_time = current - starts;
-                       String s_approx_time = String.valueOf(i_approx_time);
-                       String prefix_time = "Time Spent: ";
-                       String suffix_time = " minutes";
-                       String half_string = prefix_time.concat(s_approx_time);
-                       String final_string = half_string.concat(suffix_time);
-                       TextView time = findViewById(R.id.editTextPhone);
+                       int current_time = Integer.parseInt(end);
+                       int start_time = Integer.parseInt(start);
+                       int i_approx_time = current_time - start_time;
+                       int i_approx_time_h= i_approx_time/60;
+                       int i_approx_time_m= i_approx_time%60;
+                       String final_string=String.format("Time Spent: %2d h %2d m",i_approx_time_h,i_approx_time_m);
+                       TextView time = findViewById(R.id.approx_time);
                        time.setText(final_string);
                        int cost =0;
                        if(i_approx_time>=0&&i_approx_time<60){
@@ -86,22 +80,20 @@ public class MainActivity2 extends AppCompatActivity {
                                cost=cost+50;
                            }
                        }
-                       TextView appxcost=findViewById(R.id.capproxcost);
-                      String prefix="Cost: ₹";
-                       appxcost.setText(prefix.concat(String.valueOf(cost)));
+                       TextView approx_cost_text=findViewById(R.id.capproxcost);
+                      String prefix="Approx. Cost: ₹";
+                       approx_cost_text.setText(prefix.concat(String.valueOf(cost)));
 
 
                    }
             }
         });
 
-         Log.d("END", "hi");
-
 
 
 
         //back button
-        Button b1=findViewById(R.id.button3);
+        Button b1=findViewById(R.id.back1);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +104,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
         //payment button
-        Button b2=findViewById(R.id.logoutb);
+        Button b2=findViewById(R.id.payment);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
