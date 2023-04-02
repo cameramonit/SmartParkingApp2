@@ -57,29 +57,30 @@ public class MainActivity2 extends AppCompatActivity {
                        int current_time = Integer.parseInt(end);
                        int start_time = Integer.parseInt(start);
                        int i_approx_time = current_time - start_time;
-                       int i_approx_time_h= i_approx_time/60;
-                       int i_approx_time_m= i_approx_time%60;
-                       String final_string=String.format("Time Spent: %2d h %2d m",i_approx_time_h,i_approx_time_m);
+                       int i_approx_time_h = i_approx_time / 60;
+                       int i_approx_time_m = i_approx_time % 60;
+                       String final_string = String.format("Time Spent: %2d h %2d m", i_approx_time_h, i_approx_time_m);
                        TextView time = findViewById(R.id.approx_time);
                        time.setText(final_string);
-                       int cost =0;
-                       if(i_approx_time>=0&&i_approx_time<60){
-                           cost=30;
-                       } else if (i_approx_time>=60&&i_approx_time<120) {
-                           cost=40;
-                       } else if (i_approx_time>=120&&i_approx_time<180) {
-                           cost=60;
-                       } else if (i_approx_time>=180&&i_approx_time<360) {
-                           cost=100;
-                       }
-                       else {
-                           cost=100;
-                           int loop_int=i_approx_time-360;
-                           loop_int=loop_int/60;
-                           for(int i=1;i<=loop_int;i++){
-                               cost=cost+50;
+                       int cost = 0;
+                       if (i_approx_time >= 0 && i_approx_time < 60) {
+                           cost = 30;
+                       } else if (i_approx_time >= 60 && i_approx_time < 120) {
+                           cost = 40;
+                       } else if (i_approx_time >= 120 && i_approx_time < 180) {
+                           cost = 60;
+                       } else if (i_approx_time >= 180 && i_approx_time < 360) {
+                           cost = 100;
+                       } else {
+                           cost = 100;
+                           int loop_int = i_approx_time - 360;
+                           loop_int = loop_int / 60;
+                           for (int i = 1; i <= loop_int; i++) {
+                               cost = cost + 50;
                            }
                        }
+
+
                        TextView approx_cost_text=findViewById(R.id.capproxcost);
                       String prefix="Approx. Cost: ₹";
                        approx_cost_text.setText(prefix.concat(String.valueOf(cost)));
